@@ -62,7 +62,7 @@ ActiveAdmin.setup do |config|
   # method in a before filter of all controller actions to
   # ensure that there is a user with proper rights. You can use
   # CanCanAdapter or make your own. Please refer to documentation.
-  # config.authorization_adapter = ActiveAdmin::CanCanAdapter
+  config.authorization_adapter = ActiveAdmin::CanCanAdapter
 
   # In case you prefer Pundit over other solutions you can here pass
   # the name of default policy class. This policy will be used in every
@@ -70,7 +70,7 @@ ActiveAdmin.setup do |config|
   # config.pundit_default_policy = "MyDefaultPunditPolicy"
 
   # You can customize your CanCan Ability class name here.
-  # config.cancan_ability_class = "Ability"
+  config.cancan_ability_class = "Ability"
 
   # You can specify a method to be called on unauthorized access.
   # This is necessary in order to prevent a redirect loop which happens
@@ -98,6 +98,8 @@ ActiveAdmin.setup do |config|
   # will call the method to return the path.
   #
   # Default:
+	config.authentication_method = false
+	config.current_user_method   = false
   config.logout_link_path = :destroy_admin_user_session_path
 
   # This setting changes the http method used when rendering the
@@ -112,24 +114,24 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  # config.root_to = 'dashboard#index'
+	#config.root_to = 'home#index'
 
   # == Admin Comments
   #
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.comments = false
+  config.comments = true
   #
   # You can disable the menu item for the comments index page:
-  # config.show_comments_in_menu = false
-  #
+  config.show_comments_in_menu = true
+  
   # You can change the name under which comments are registered:
-  # config.comments_registration_name = 'AdminComment'
+  config.comments_registration_name = 'admin'
   #
   # You can change the order for the comments and you can change the column
   # to be used for ordering
-  # config.comments_order = 'created_at ASC'
+  config.comments_order = 'created_at ASC'
 
   # == Batch Actions
   #
@@ -241,6 +243,16 @@ ActiveAdmin.setup do |config|
   #
   #   end
 
+	ActiveAdmin.setup do |config|
+		config.namespace :admin do |admin|
+			admin.build_menu :utility_navigation do |menu|
+				menu.add label: "ActiveAdmin.info", url: "http://www.activeadmin.info",
+					html_options: { target: :blank }
+				admin.add_current_user_to_menu  menu
+				admin.add_logout_button_to_menu menu
+			end
+		end
+	end
   # == Pagination
   #
   # Pagination is enabled by default for all resources.
