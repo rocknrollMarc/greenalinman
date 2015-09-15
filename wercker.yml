@@ -33,7 +33,7 @@ build:
 
 after-steps:
         - slack-notifier:
-          url: $SLACK_URL
+          url: https://hooks.slack.com/services/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
           channel: backend
           username: marc.bluemner@gmail.com
           notify_on: "failed"
