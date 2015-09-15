@@ -102,7 +102,11 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    docker-api (1.22.4)
+      excon (>= 0.38.0)
+      json
     erubis (2.7.0)
+    excon (0.45.4)
     execjs (2.6.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -347,6 +351,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise
+  docker-api
   factory_girl_rails
   ffaker
   guard-rails
@@ -365,6 +370,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.4)
   rolify
+  rspec
   rspec-rails
   ruby-growl
   sass-rails (~> 5.0)
