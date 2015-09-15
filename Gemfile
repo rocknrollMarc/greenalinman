@@ -58,6 +58,7 @@ group :development, :test do
 	gem 'docker-api'
 
 	gem 'guard-rails'
+	gem 'guard-bundler'
 	gem 'guard-rspec'
 	gem 'terminal-notifier-guard'
 	gem 'ruby-growl'
