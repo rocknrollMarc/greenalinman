@@ -363,6 +363,7 @@ DEPENDENCIES
   better_errors
   byebug
   cancancan
+  capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise
