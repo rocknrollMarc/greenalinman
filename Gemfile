@@ -60,6 +60,8 @@ group :development, :test do
 end
 
 group :development do
+	
+	gem 'table_print'
 	gem 'pry-rails'
 	gem 'pry-coolline'
 	gem 'awesome_print'
@@ -69,7 +71,7 @@ group :development do
 	gem 'meta_request'
 
 	gem 'quiet_assets'
-  # Access an IRB console on exception pages or by using <%= console %> in views
+	gem 'better_errors'
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
