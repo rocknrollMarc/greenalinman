@@ -53,6 +53,8 @@ group :development, :test do
 	gem 'shoulda-matchers'
 
 	gem 'rspec'
+	gem 'execjs'
+	gem 'therubyracer'
 	gem 'docker-api'
 
 	gem 'guard-rails'
