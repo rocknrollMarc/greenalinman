@@ -52,6 +52,9 @@ group :development, :test do
 	gem 'database_cleaner'
 	gem 'shoulda-matchers'
 
+	gem 'rspec'
+	gem 'docker-api'
+
 	gem 'guard-rails'
 	gem 'guard-rspec'
 	gem 'terminal-notifier-guard'
