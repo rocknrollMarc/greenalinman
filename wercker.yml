@@ -31,3 +31,11 @@ build:
             name: rspec
             code: bundle exec rspec
 
+after-steps:
+        - slack-notifier:
+          url: $SLACK_URL
+          channel: backend
+          username: marc.bluemner@gmail.com
+          notify_on: "failed"
+
+      
